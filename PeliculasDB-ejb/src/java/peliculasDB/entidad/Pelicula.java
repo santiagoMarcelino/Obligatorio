@@ -15,6 +15,8 @@ public class Pelicula extends EntidadPersistente {
     @OneToOne
     private Director director; 
     @Column(nullable = false)
+   
+    
     @OneToOne
     private Genero genero; 
     @Column(nullable = false)
@@ -30,7 +32,7 @@ public class Pelicula extends EntidadPersistente {
         this.nombre = nombre;
     }
     
-    public Director getDirector() {
+ /*   public Director getDirector() {
         return director;
     }
 
@@ -45,7 +47,7 @@ public class Pelicula extends EntidadPersistente {
     public void setGenero(Genero g) {
         this.genero = g;
     }   
-    
+   */ 
     public int getAnio() {
         return anio;
     }
@@ -64,7 +66,7 @@ public class Pelicula extends EntidadPersistente {
     
     @Override
     public String toString() {
-        return "Pelicula{" + "nombre=" + nombre + ", director=" + director + ", genero=" + genero + '}';
+        return "Pelicula{" + "nombre=" + nombre + ", director=" +/* director + ", genero=" + genero */ '}';
     }
 
     @Override
