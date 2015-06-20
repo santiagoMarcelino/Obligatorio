@@ -11,11 +11,12 @@ public class Pelicula extends EntidadPersistente {
     
     @Column(nullable = false)
     private String nombre;
+  /*
     @Column(nullable = false)
     @OneToOne
     private Director director; 
     @Column(nullable = false)
-   
+   */
     
     @OneToOne
     private Genero genero; 
