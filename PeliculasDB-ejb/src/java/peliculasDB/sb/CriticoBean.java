@@ -1,4 +1,4 @@
-/*package PeliculasDB.sb;
+package PeliculasDB.sb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,4 +20,4 @@ public class CriticoBean {
     public void agregarDirector(Critico c) {
         em.persist(c);
     }
-}*/
+}

@@ -1,4 +1,4 @@
-/*package PeliculasDB.sb;
+package PeliculasDB.sb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,4 +21,3 @@ public class DirectorBean {
         em.persist(d);
     }
 }
-*/
