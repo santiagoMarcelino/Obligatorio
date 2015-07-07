@@ -14,7 +14,13 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(peliculasDB.rest.PersonaResource.class);
+        resources.add(peliculasDB.rest.ActorResource.class);
+        resources.add(peliculasDB.rest.CriticoWSRest.class);
+        resources.add(peliculasDB.rest.DirectorWSRest.class);
+        resources.add(peliculasDB.rest.GeneroWSRest.class);
+        resources.add(peliculasDB.rest.PeliculaWSRest.class);
+        resources.add(peliculasDB.rest.ReseniaWSRest.class);
+        resources.add(peliculasDB.rest.UsuarioWSRest.class);
     }
-    
+
 }

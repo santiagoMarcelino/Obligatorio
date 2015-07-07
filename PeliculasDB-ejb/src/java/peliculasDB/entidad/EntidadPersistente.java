@@ -9,11 +9,11 @@ import javax.persistence.Version;
 
 @MappedSuperclass
 public abstract class EntidadPersistente implements Serializable {
- 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
-    
+
     @Version
     protected Long version;
 
@@ -24,7 +24,7 @@ public abstract class EntidadPersistente implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public Long getVersion() {
         return version;
     }
@@ -32,6 +32,5 @@ public abstract class EntidadPersistente implements Serializable {
     public void setVersion(Long version) {
         this.version = version;
     }
-    
-    
+
 }

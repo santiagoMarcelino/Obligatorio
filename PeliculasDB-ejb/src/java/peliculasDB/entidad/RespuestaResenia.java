@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class Resenia extends EntidadPersistente {
+public class RespuestaResenia extends EntidadPersistente {
 
     private Pelicula pelicula;
     @Column(nullable = false)
     private String comentarios;
-    @Column(nullable = false)
-    private int calificacion;
 
     private Critico critico;
+
+    private Resenia respondida;
 
     public String getComentarios() {
         return comentarios;
@@ -24,20 +24,20 @@ public class Resenia extends EntidadPersistente {
         this.comentarios = comentarios;
     }
 
+    public Resenia getRespondida() {
+        return respondida;
+    }
+
+    public void setRespondida(Resenia respondida) {
+        this.respondida = respondida;
+    }
+
     public Pelicula getPelicula() {
         return pelicula;
     }
 
     public void setPelicula(Pelicula p) {
         this.pelicula = p;
-    }
-
-    public int getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(int c) {
-        this.calificacion = c;
     }
 
     public Critico getCritico() {
@@ -50,7 +50,7 @@ public class Resenia extends EntidadPersistente {
 
     @Override
     public String toString() {
-        return "Resenia{" + "pelicula=" + this.pelicula + ", comentarios=" + this.comentarios + ", calificacion=" + this.calificacion + ", critico=" + critico + '}';
+        return " comentarios=" + this.comentarios + '}';
     }
 
     /*@Override

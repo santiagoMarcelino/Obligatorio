@@ -1,25 +1,22 @@
 package peliculasDB.entidad;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
 
 @Entity
 public class Usuario extends Persona {
-    
+
     @Column(nullable = false)
-    private String clave;  
-    
+    private String clave;
+
     public String getClave() {
         return clave;
     }
-    
+
     public void setClave(String c) {
         this.clave = c;
-    }  
-    
+    }
+
     @Override
     public String toString() {
         return "Actor{" + "nombre=" + this.getNombre() + '}';
@@ -45,5 +42,5 @@ public class Usuario extends Persona {
             return false;
         }
         return true;
-    }    
+    }
 }

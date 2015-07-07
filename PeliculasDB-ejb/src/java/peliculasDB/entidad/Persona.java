@@ -5,12 +5,12 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Persona extends EntidadPersistente {
-    
-    @Column(nullable = false)
+
+    @Column(unique=true)
     private String nombre;
     @Column(nullable = false)
     private String email;
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -18,15 +18,15 @@ public class Persona extends EntidadPersistente {
     public void setNombre(String n) {
         this.nombre = n;
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    
-    public void setEmail(String e){
+
+    public void setEmail(String e) {
         this.email = e;
     }
-    
+
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", email=" + email + '}';

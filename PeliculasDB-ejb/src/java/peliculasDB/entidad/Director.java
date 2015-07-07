@@ -2,22 +2,23 @@ package peliculasDB.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Director extends Persona {
-    
+
     @Column(nullable = false)
-    private String nacionalidad;  
-    
+    private String nacionalidad;
+
     public String getNacionalidad() {
         return nacionalidad;
     }
-    
+
     public void setNacionalidad(String n) {
         this.nacionalidad = n;
-    }    
-    
+    }
+
     @Override
     public String toString() {
         return "Director{" + "nombre=" + this.getNombre() + '}';
@@ -43,5 +44,5 @@ public class Director extends Persona {
             return false;
         }
         return true;
-    }    
+    }
 }

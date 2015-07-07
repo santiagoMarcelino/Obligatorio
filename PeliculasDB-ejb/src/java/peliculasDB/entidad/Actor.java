@@ -1,25 +1,23 @@
 package peliculasDB.entidad;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
 
 @Entity
 public class Actor extends Persona {
+
     
     @Column(nullable = false)
-    private String nacionalidad;  
-    
+    private String nacionalidad;
+
     public String getNacionalidad() {
         return nacionalidad;
     }
-    
-    public void setNacionalidad(String n) {
-        this.nacionalidad = n;
-    }     
-    
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
     @Override
     public String toString() {
         return "Actor{" + "nombre=" + this.getNombre() + '}';
@@ -41,9 +39,7 @@ public class Actor extends Persona {
             return false;
         }
         final Actor other = (Actor) object;
-        if ((this.getNombre() == null) ? (other.getNombre() != null) : !this.getNombre().equals(other.getNombre())) {
-            return false;
-        }
-        return true;
-    }    
+        return !((this.getNombre() == null)
+                ? (other.getNombre() != null) : !this.getNombre().equals(other.getNombre()));
+    }
 }

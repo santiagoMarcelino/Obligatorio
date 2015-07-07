@@ -3,10 +3,12 @@
   <persistence-unit name="PeliculasDB-ejbPU" transaction-type="JTA">
     <jta-data-source>jdbc/peliculasdb</jta-data-source>
     <class>peliculasDB.entidad.Actor</class>
-    <class>peliculasDB.entidad.Director</class>
-    <class>peliculasDB.entidad.Pelicula</class>
-    <class>peliculasDB.entidad.Genero</class>
     <class>peliculasDB.entidad.Critico</class>
+    <class>peliculasDB.entidad.Director</class>
+    <class>peliculasDB.entidad.Genero</class>
+    <class>peliculasDB.entidad.Pelicula</class>
+    <class>peliculasDB.entidad.Resenia</class>
+    <class>peliculasDB.entidad.RespuestaResenia</class>
     <class>peliculasDB.entidad.Usuario</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>

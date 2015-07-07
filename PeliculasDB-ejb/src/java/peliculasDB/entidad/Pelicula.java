@@ -4,27 +4,24 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Pelicula extends EntidadPersistente {
-    
-    @Column(nullable = false)
+
+    @Column(unique=true)
     private String nombre;
-  /*
+
+    private Director director;
+
+    private Genero genero;
+
     @Column(nullable = false)
-    @OneToOne
-    private Director director; 
-    @Column(nullable = false)
-   */
-    
-    @OneToOne
-    private Genero genero; 
-    @Column(nullable = false)
-    private int anio; 
+    private int anio;
     @ManyToMany
     private List<Actor> actores;
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -32,42 +29,45 @@ public class Pelicula extends EntidadPersistente {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
- /*   public Director getDirector() {
+
+    public Director getDirector() {
         return director;
     }
 
     public void setDirector(Director d) {
         this.director = d;
     }
-    
+
     public Genero getGenero() {
         return genero;
     }
 
     public void setGenero(Genero g) {
         this.genero = g;
-    }   
-   */ 
+    }
+
     public int getAnio() {
         return anio;
     }
 
     public void setAnio(int a) {
         this.anio = a;
-    }      
-    
-    public List<Actor> getResenias() {
+    }
+
+    public List<Actor> getActores() {
         return actores;
     }
 
-    public void setResenias(List<Actor> a) {
+    public void setActores(List<Actor> a) {
         this.actores = a;
     }
-    
+
     @Override
     public String toString() {
-        return "Pelicula{" + "nombre=" + nombre + ", director=" +/* director + ", genero=" + genero */ '}';
+        return "Pelicula{" + "nombre=" + nombre
+                + ", director="
+                + director.getNombre()
+                + ", genero=" + genero.getNombre() + '}';
     }
 
     @Override
@@ -90,5 +90,5 @@ public class Pelicula extends EntidadPersistente {
             return false;
         }
         return true;
-    }    
+    }
 }
